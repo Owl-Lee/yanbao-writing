@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+<section class="hero shell">
+  <p class="eyebrow">WRITING BY YANBAO LI</p>
+  <h1>把一些值得留下的<br><em>文字</em>，放在这里。</h1>
+  <p class="hero-copy">散文、观察、片段与偶尔的技术思考。它们不一定回答问题，但愿意诚实地记录问题如何经过我。</p>
+  <div class="hero-meta">
+    <span>{{ site.posts | size }} 篇文章</span>
+    <span>纽约 · 不定期更新</span>
+  </div>
+</section>
+
+<section class="archive shell" aria-labelledby="archive-title">
+  <div class="archive-head">
+    <div>
+      <p class="section-kicker">ARCHIVE</p>
+      <h2 id="archive-title">最近写下的</h2>
+    </div>
+    <div class="filter-bar" role="group" aria-label="筛选文章">
+      <button class="filter active" type="button" data-filter="all">全部</button>
+      {% assign categories = site.posts | map: "category" | uniq %}
+      {% for category in categories %}
+        <button class="filter" type="button" data-filter="{{ category | escape }}">{{ category }}</button>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="post-list">
+    {% for post in site.posts %}
+      <article class="post-row" data-category="{{ post.category | escape }}">
+        <div class="post-date">
+          <strong>{{ post.date | date: "%d" }}</strong>
+          <span>{{ post.date | date: "%Y.%m" }}</span>
+        </div>
+        <div class="post-summary">
+          <div class="post-taxonomy">
+            <span>{{ post.category }}</span>
+            {% if post.reading_time %}<span>{{ post.reading_time }} 分钟阅读</span>{% endif %}
+          </div>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt | strip_html | strip_newlines }}</p>
+          {% if post.tags.size > 0 %}
+            <div class="tag-list">
+              {% for tag in post.tags %}<span># {{ tag }}</span>{% endfor %}
+            </div>
+          {% endif %}
+        </div>
+        <a class="read-link" href="{{ post.url | relative_url }}" aria-label="阅读《{{ post.title }}》">阅读 ↗</a>
+      </article>
+    {% else %}
+      <p class="empty-state">第一篇文字正在路上。</p>
+    {% endfor %}
+  </div>
+</section>
+

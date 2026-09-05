@@ -1,0 +1,21 @@
+title: "Writing by Yanbao Li"
+description: "Essays, notes, and fragments by Yanbao Li."
+url: "https://writing.yanbaoli.me"
+baseurl: ""
+lang: "zh-CN"
+timezone: "America/New_York"
+permalink: /:year/:month/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+feed:
+  path: feed.xml
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
