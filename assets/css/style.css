@@ -73,11 +73,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid color-mix(in srgb, va
 .archive-head { display: flex; justify-content: space-between; gap: 30px; align-items: end; padding-bottom: 25px; border-bottom: 2px solid var(--navy); }
 .archive-head h2 { margin: 0; font-family: var(--serif); font-size: 1.75rem; }
 .section-kicker { margin-bottom: 6px; }
-.filter-bar { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 7px; }
-.filter { padding: 6px 11px; border: 1px solid var(--line); background: transparent; color: var(--faint); font-size: .76rem; cursor: pointer; }
-.filter:hover, .filter.active { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
 .post-row { display: grid; grid-template-columns: 74px minmax(0, 1fr) 72px; gap: 26px; align-items: start; padding: 34px 0; border-bottom: 1px solid var(--line); }
-.post-row[hidden] { display: none; }
 .post-date strong { display: block; color: var(--accent); font-family: var(--serif); font-size: 1.8rem; font-weight: 500; line-height: 1; }
 .post-date span { display: block; margin-top: 7px; color: var(--faint); font-size: .72rem; }
 .post-taxonomy { display: flex; gap: 13px; margin-bottom: 8px; color: var(--accent); font-size: .72rem; font-weight: 750; letter-spacing: .05em; text-transform: uppercase; }
@@ -150,7 +146,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid color-mix(in srgb, va
   .hero h1 { font-size: clamp(3.1rem, 14vw, 5rem); }
   .archive { padding: 34px 24px 8px; }
   .archive-head { align-items: start; flex-direction: column; }
-  .filter-bar { justify-content: flex-start; }
   .post-row { grid-template-columns: 54px 1fr; gap: 18px; }
   .read-link { grid-column: 2; justify-self: start; }
   .post-layout { grid-template-columns: 1fr; }

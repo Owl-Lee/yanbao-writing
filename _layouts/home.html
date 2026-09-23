@@ -5,7 +5,7 @@ layout: default
 <section class="hero shell">
   <p class="eyebrow">WRITING BY YANBAO LI</p>
   <h1>把一些值得留下的<br><em>文字</em>，放在这里。</h1>
-  <p class="hero-copy">散文、观察、片段与偶尔的技术思考。它们不一定回答问题，但愿意诚实地记录问题如何经过我。</p>
+  <p class="hero-copy">散文、回忆、生活片段，以及偶尔停下来时的思考。这里不急着回答问题，只想保存我走过的路、遇见的人，和那些不愿被时间带走的瞬间。</p>
   <div class="hero-meta">
     <span>{{ site.posts | size }} 篇文章</span>
     <span>纽约 · 不定期更新</span>
@@ -17,13 +17,6 @@ layout: default
     <div>
       <p class="section-kicker">ARCHIVE</p>
       <h2 id="archive-title">最近写下的</h2>
-    </div>
-    <div class="filter-bar" role="group" aria-label="筛选文章">
-      <button class="filter active" type="button" data-filter="all">全部</button>
-      {% assign categories = site.posts | map: "category" | uniq %}
-      {% for category in categories %}
-        <button class="filter" type="button" data-filter="{{ category | escape }}">{{ category }}</button>
-      {% endfor %}
     </div>
   </div>
 

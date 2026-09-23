@@ -7,19 +7,6 @@ themeButton?.addEventListener("click", () => {
   localStorage.setItem("writing-theme", next);
 });
 
-const filters = [...document.querySelectorAll(".filter")];
-const posts = [...document.querySelectorAll(".post-row")];
-
-filters.forEach((button) => {
-  button.addEventListener("click", () => {
-    const selected = button.dataset.filter;
-    filters.forEach((item) => item.classList.toggle("active", item === button));
-    posts.forEach((post) => {
-      post.hidden = selected !== "all" && post.dataset.category !== selected;
-    });
-  });
-});
-
 document.querySelector(".copy-link")?.addEventListener("click", async (event) => {
   const button = event.currentTarget;
   try {
