@@ -64,3 +64,8 @@ reading_time: 6
 我坐在这里，想着以后，也想着那些陪我走到今天的人。
 
 而这一切，都起源于那个冬天。
+
+<figure class="essay-figure">
+  <img src="{{ '/assets/images/that-winter-safer.webp' | relative_url }}" alt="夕阳下，积雪的窗台上放着一只黑色杯子，窗外是经过隐私处理的冬日雪景" loading="lazy" decoding="async">
+  <figcaption>配图基于那个冬天拍摄的照片，经 AI 重绘与隐私处理。</figcaption>
+</figure>
