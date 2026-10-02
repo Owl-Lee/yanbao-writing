@@ -7,6 +7,8 @@ date: 2026-09-23 12:00:00 -0400
 category: 随笔
 tags: [回忆, 成长, 冬天]
 reading_time: 6
+cover: /assets/images/that-winter-safer.webp
+cover_alt: "夕阳下，积雪的窗台上放着一只黑色杯子，窗外是冬日雪景"
 ---
 
 五年前的那个冬天，天津的雪下得很大。
