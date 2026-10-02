@@ -7,40 +7,44 @@ layout: default
   <header class="post-header">
     <a class="back-link" href="{{ '/' | relative_url }}">← 返回文章列表</a>
     <div class="post-taxonomy">
-      <span>{{ page.category }}</span>
+      <span class="cat">{{ page.category }}</span>
       {% if page.reading_time %}<span>{{ page.reading_time }} 分钟阅读</span>{% endif %}
     </div>
     <h1>{{ page.title }}</h1>
     {% if page.subtitle %}<p class="post-subtitle">{{ page.subtitle }}</p>{% endif %}
     <div class="post-byline">
-      <span>{{ site.data.site.author }}</span>
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y 年 %m 月 %d 日" }}</time>
+      <strong>{{ site.data.site.author }}</strong>
+      <span class="dot" aria-hidden="true"></span>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y 年 %-m 月 %-d 日" }}</time>
+      <button class="copy-link" type="button">复制链接</button>
     </div>
   </header>
 
-  <div class="post-layout">
-    <aside class="post-aside">
-      <span>写于</span>
-      <strong>{{ page.date | date: "%Y.%m.%d" }}</strong>
-      <button class="copy-link" type="button">复制链接</button>
-    </aside>
-    <div class="prose">
-      {{ content }}
-      {% if page.tags.size > 0 %}
-        <footer class="post-tags">
-          {% for tag in page.tags %}<span># {{ tag }}</span>{% endfor %}
-        </footer>
-      {% endif %}
-    </div>
+  <div class="prose">
+    {{ content }}
   </div>
+
+  <footer class="post-end">
+    <p class="fin" aria-hidden="true">— 完 —</p>
+    {% if page.tags.size > 0 %}
+      <div class="tag-list post-tags">{% for tag in page.tags %}<span># {{ tag }}</span>{% endfor %}</div>
+    {% endif %}
+    <div class="author-card">
+      <img src="{{ '/assets/images/yanbao-li.jpg' | relative_url }}" alt="" width="56" height="56" loading="lazy">
+      <div>
+        <strong>{{ site.data.site.author }}</strong>
+        <p>在石溪大学学习信息系统，做软件，也写字。</p>
+      </div>
+      <a class="home" href="{{ site.data.site.main_site }}">个人主页 ↗</a>
+    </div>
+  </footer>
 
   <nav class="post-nav" aria-label="上一篇和下一篇">
     {% if page.previous %}
-      <a href="{{ page.previous.url | relative_url }}"><span>上一篇</span><strong>{{ page.previous.title }}</strong></a>
+      <a href="{{ page.previous.url | relative_url }}"><span>← 上一篇</span><strong>{{ page.previous.title }}</strong></a>
     {% endif %}
     {% if page.next %}
-      <a class="next" href="{{ page.next.url | relative_url }}"><span>下一篇</span><strong>{{ page.next.title }}</strong></a>
+      <a class="next" href="{{ page.next.url | relative_url }}"><span>下一篇 →</span><strong>{{ page.next.title }}</strong></a>
     {% endif %}
   </nav>
 </article>
-
